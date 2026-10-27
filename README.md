@@ -3,7 +3,7 @@ Assignment 1 - Hello World: GitHub and d3
 
 Using d3.js, I've created a canvas picturing a person standing out on a sunny day outside standing on grass using a mixture of rectangular, polygons, lines, and circles of different colors. 
 
-![Picture of Canvas](image.png)
+![Picture of Canvas](image-1.png)
 
 
 Site Link  
