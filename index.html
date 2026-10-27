@@ -70,7 +70,46 @@
       .attr("cy", 120)
       .attr("r", 60)
       .attr("fill", "yellow");
-    
+
+    // left cloud
+    const leftCloud = svg.append("rect")
+      .attr("x", 400)
+      .attr("y", 90)
+      .attr("width", 200)
+      .attr("height", 60)
+      .attr("fill", "white");
+
+    // middle cloud
+    const middleCloud = svg.append("rect")
+      .attr("x", 850)
+      .attr("y", 50)
+      .attr("width", 240)
+      .attr("height", 70)
+      .attr("fill", "white");
+
+    // right cloud
+    const rightCloud = svg.append("rect")
+      .attr("x", 1250)
+      .attr("y", 120)
+      .attr("width", 200)
+      .attr("height", 60)
+      .attr("fill", "white");
+
+    // drift the clouds to the right, wrapping back around the left edge
+    const clouds = [
+      { shape: leftCloud, x: 400, width: 200, speed: 30 },
+      { shape: middleCloud, x: 850, width: 240, speed: 20 },
+      { shape: rightCloud, x: 1250, width: 200, speed: 40 }
+    ];
+
+    d3.timer(elapsed => {
+      clouds.forEach(cloud => {
+        const travel = 1600 + cloud.width;
+        const left = (cloud.x + cloud.width + elapsed / 1000 * cloud.speed) % travel - cloud.width;
+        cloud.shape.attr("x", left);
+      });
+    });
+
     // person's left foot
     svg.append("line")
       .attr("x1", 600).attr("y1", 500)

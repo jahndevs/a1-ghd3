@@ -13,7 +13,7 @@ See here: https://jahndevs.github.io/a1-ghd3/
 
 Technical Achievements
 ===
-- Lining up the polygons around the sun.
+- Animating the cloud movement across the canvas from left to right continuously.
 
 Design Achievements 
 ===
